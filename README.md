@@ -191,7 +191,7 @@ curl -X POST http://localhost:8080/api/sessions/1/join?userId=2
 
 Submit a restaurant:
 ```bash
-curl -X POST http://localhost:8080/api/sessions/1/submit -H "Content-Type: application/json" -d '{"restaurantName": "Pizza Palace"}'
+curl -X POST http://localhost:8080/api/sessions/1/submit?restaurantName=pizzahut&userId=1
 ```
 
 End a session:
