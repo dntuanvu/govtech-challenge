@@ -24,13 +24,6 @@ public class SessionController {
     private UserService userService;
 
     @PostMapping("/create")
-    public ResponseEntity<User> createUser(@RequestBody Map<String, String> body) {
-        String name = body.get("name");
-        User user = userService.createUser(name);
-        return new ResponseEntity<>(user, HttpStatus.CREATED);
-    }
-
-    @PostMapping("/create")
     public Session createSession(@RequestParam Long userId) {
         User user = userService.getUserById(userId);
         return sessionService.createSession(user);
