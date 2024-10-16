@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/sessions")
@@ -21,6 +22,13 @@ public class SessionController {
 
     @Autowired
     private UserService userService;
+
+    @PostMapping("/create")
+    public ResponseEntity<User> createUser(@RequestBody Map<String, String> body) {
+        String name = body.get("name");
+        User user = userService.createUser(name);
+        return new ResponseEntity<>(user, HttpStatus.CREATED);
+    }
 
     @PostMapping("/create")
     public Session createSession(@RequestParam Long userId) {
