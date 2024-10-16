@@ -5,10 +5,7 @@ import lombok.*;
 
 @Entity
 @Table(name = "restaurants")
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Restaurant {

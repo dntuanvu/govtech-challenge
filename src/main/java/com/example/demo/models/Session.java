@@ -11,8 +11,6 @@ import java.util.Set;
 @Table(name = "sessions")
 @Getter
 @Setter
-@ToString
-@RequiredArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
 public class Session {
